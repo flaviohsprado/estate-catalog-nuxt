@@ -35,7 +35,6 @@ export function formatCurrency(amount: number): string {
 }
 
 export function getItemsAndSort(estates: IEstate[], key: keyof IEstate) {
-   console.log('estates', estates);
    const items = estates.map(estate => estate[key]).sort().filter((value, index, self) => self.indexOf(value) === index) as (string | number)[];
 
    return items.map(item => item.toString() as string);

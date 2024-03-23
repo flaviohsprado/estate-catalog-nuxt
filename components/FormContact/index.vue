@@ -16,7 +16,6 @@ const schema = object().shape({
 
 function onSubmit(values: any) {
    loading.value = true;
-   console.log(values);
    showToast('Contact', 'Message sent successfully', 'success');
 
    setTimeout(() => {
