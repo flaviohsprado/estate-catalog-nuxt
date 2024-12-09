@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { onMounted, ref } from 'vue';
-import type { IEstate, IEstateResponse } from '~/interfaces/estate';
+import type { IEstate } from '~/interfaces/estate';
 import { formatEstate } from '~/utils';
+import { estateMock } from './estate.mock';
 
 export function useGetEstate(id: number) {
    let estate = ref<IEstate>({} as IEstate);
@@ -9,9 +9,7 @@ export function useGetEstate(id: number) {
 
    const loadEstate = async () => {
       try {
-         const { data } = await axios.get<IEstateResponse[]>('https://mocki.io/v1/4814c9f0-ceca-4f94-ab54-02cc311dda3f');
-
-         const formatedEstates = data.map((estate) => formatEstate(estate));
+         const formatedEstates = estateMock.map((estate) => formatEstate(estate));
 
          estate.value = formatedEstates.find((estate) => estate.id === id) || {} as IEstate;
       } catch (err: any) {

@@ -36,6 +36,7 @@ const {
 <template>
    <div :class="{ 'has-error': !!errorMessage, success: meta.valid }">
       <v-textarea :name="name" :label="label" variant="solo" v-model="inputValue" @input="handleChange"
-         @blur="handleBlur" :error-messages="errorMessage" :rules="meta.valid" />
+         @blur="handleBlur" :error="!!errorMessage" :error-messages="errorMessage" :validate-on="[]"
+         style="padding-bottom: 5px;" />
    </div>
 </template>

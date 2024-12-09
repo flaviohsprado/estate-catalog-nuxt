@@ -47,9 +47,6 @@ function onInvalidSubmit() {
       <UiInputText name="email" label="Email *" />
 
       <UiInputText name="phoneNumber" label="Phone Number *" return-masked-value mask="(###) ###-####" />
-
-      <UiInputTextArea name="comments" label="Comments *" />
-
       <UiDefaultButton id="submit-button" :loading="loading" class="mt-2" type="submit" block>Contact Now
       </UiDefaultButton>
    </Form>

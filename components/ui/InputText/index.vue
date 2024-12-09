@@ -36,6 +36,6 @@ const {
 <template>
    <div :class="{ 'has-error': !!errorMessage, success: meta.valid }">
       <v-text-field :name="name" :label="label" :type="type" variant="solo" v-model="inputValue" @input="handleChange"
-         @blur="handleBlur" :error-messages="errorMessage" :rules="meta.valid" style="padding-bottom: 5px;" />
+         @blur="handleBlur" :error="!!errorMessage" :error-messages="errorMessage" style="padding-bottom: 5px;" />
    </div>
 </template>
